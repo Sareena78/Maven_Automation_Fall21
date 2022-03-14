@@ -37,13 +37,13 @@ public class MouseActions {
             System.out.println("Title doesn't match. Actual title is " + actualTitle);
         }
 
-
         //declare mouse actions
         Actions mouseAction = new Actions(driver);
         //hover over send tab to open the drop down list
         try {
             WebElement sendTab = driver.findElement(By.xpath("//*[text()='Send']"));
             mouseAction.moveToElement(sendTab).perform();
+
 
         } catch (Exception e) {
             System.out.println("Unable to hover over " + e);
@@ -52,6 +52,7 @@ public class MouseActions {
         try {
             WebElement zipCodeLookup = driver.findElement(By.xpath("//*[text()='Look Up a ZIP Code']"));
             mouseAction.moveToElement(zipCodeLookup).click().perform();
+
 
         } catch (Exception e) {
             System.out.println("Unable to click on zipcode " + e);

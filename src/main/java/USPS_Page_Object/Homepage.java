@@ -16,7 +16,7 @@ import java.util.List;
 public class Homepage extends Reusable_Annotations {
 
     //constructor is helper method that allows you to identify objects in your pom
-    //so later you can class those methods in your test class
+    //so later you can call those methods in your test class
     //because your pom class is not static
     //declare a local logger to your pom class
     ExtentTest logger;

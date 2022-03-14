@@ -21,7 +21,4 @@ public class BaseClass extends Reusable_Annotations {
         return  sendMailAndPackages;
     }
 
-
-
-
 }

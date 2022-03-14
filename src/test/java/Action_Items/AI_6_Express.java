@@ -101,7 +101,7 @@ public class AI_6_Express {
 
             Reusable_Actions_Loggers.PopUpClickMethod(driver, "//*[@name='bluecoreCloseButton']", logger, "popup");
             //Click on 2nd image, using @class property with index 1, use clickByIndex from reusable
-            Reusable_Actions_Loggers.cilckByIndexmethodWithLogger(driver, "//*[@class='cdS1D9eKI7bXTMHp5xeAA']", 1, logger, " Select dress by index");
+            Reusable_Actions_Loggers.cilckByIndexmethodWithLogger(driver, "//*[@class='_1vuRDTYH _3jxErwTw']", 1, logger, " Select dress by index");
 
             // Click on specific size using excel data, pass value as locater using text or value
             Reusable_Actions_Loggers.clickMethodwithLogger(driver, "//*[text()='" + size + "']", logger, "size");

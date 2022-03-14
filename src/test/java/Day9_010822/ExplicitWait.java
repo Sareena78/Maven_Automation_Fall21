@@ -33,6 +33,7 @@ public class ExplicitWait {
         //click on Track
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Tracking']"))).click();
+
         } catch (Exception e) {
             System.out.println("Unable to click on Track " + e);
         }

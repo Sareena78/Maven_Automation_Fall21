@@ -24,21 +24,27 @@ public class AI_5_Hulu_TestNG {
         ArrayList<String> email = new ArrayList<>();
         email.add("mooddnavid@yahoo.com");
         email.add("mooknavidd@gmail.com");
+
         ArrayList<String> password = new ArrayList<>();
         password.add("1111111");
         password.add("2222211");
+
         ArrayList<String> name = new ArrayList<>();
         name.add("Aqila");
         name.add("Jameel");
+
         ArrayList<String> birthMonth = new ArrayList<>();
         birthMonth.add("January");
         birthMonth.add("October");
+
         ArrayList<String> birthDay = new ArrayList<>();
         birthDay.add("4");
         birthDay.add("6");
+
         ArrayList<String> birthYear = new ArrayList<>();
         birthYear.add("1960");
         birthYear.add("1989");
+
         ArrayList<String> Gender = new ArrayList<>();
         Gender.add("Male");
         Gender.add("Female");

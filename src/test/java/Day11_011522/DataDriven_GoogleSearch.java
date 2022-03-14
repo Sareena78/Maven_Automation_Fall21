@@ -25,7 +25,7 @@ public class DataDriven_GoogleSearch {
 
     @Test
     public void GoogleSearchDataDriven() throws BiffException, IOException, WriteException {
-        //Step 1: read the data from the excel sheet you created
+        //Step 1: read the data from the excel workbook you created
         Workbook readableFile = Workbook.getWorkbook(new File("src/main/resources/Google Search.xls"));
         //Step 2: locating the worksheet that you created for the workbook
        // Sheet readableSheet = readableFile.getSheet(0);

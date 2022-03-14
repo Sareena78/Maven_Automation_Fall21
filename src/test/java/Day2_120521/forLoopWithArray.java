@@ -1,5 +1,7 @@
 package Day2_120521;
 
+import java.sql.SQLOutput;
+
 public class forLoopWithArray {
     public static void main(String[] args) {
 
@@ -13,10 +15,16 @@ public class forLoopWithArray {
         boroughs[4] = "Staten Island";
         boroughs[5] = "LI";
 
-        for (int i=0; i < boroughs.length; i++){
+        /*for (int i=0; i < boroughs.length; i++){
             //print statement
             System.out.println("My current borough is " +boroughs[i]);
 
+        }//end of loop
+
+         */
+        //if you want to print those cities backwards this is how you would go by.
+        for (int i=0; i < boroughs.length-1; i--){
+            System.out.println("My current borough is " +boroughs);
         }//end of loop
 
     }//end of main

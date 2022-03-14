@@ -54,12 +54,12 @@ public class TestNG_Annotations {
 
     @BeforeMethod
     public void beforeTest(){
-        System.out.println("This executes before each test");
+        System.out.println("This executes before each test and its just the beginiing");
     }
 
     @AfterMethod
     public void afterTest(){
-        System.out.println("This executes after each test");
+        System.out.println("This executes after each test and its the end");
     }
 
 

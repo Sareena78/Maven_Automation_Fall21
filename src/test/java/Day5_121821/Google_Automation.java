@@ -12,7 +12,7 @@ public class Google_Automation {
         System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
         //define the web driver you are using
         WebDriver driver = new ChromeDriver();
-        //Naviage to google.
+        //Navigate to google.
         driver.navigate().to ("https://www.google.com/");
         //maximize the browser
         driver.manage().window().maximize();

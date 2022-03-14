@@ -30,6 +30,7 @@ public class Reusable_Actions_Loggers {
         //options.addArguments("fullscreen"); //for mac users
         //set as incognito mode
         options.addArguments("incognito");
+        //disable pop ups
         options.addArguments("–disable-notifications");
 
         //set as headless(running the driver on background)
@@ -215,9 +216,6 @@ public class Reusable_Actions_Loggers {
             getScreenShotWithLogger(driver,elementName,logger);
         }
     }//end of submit method
-
-
-
 
 }//end of java class
 

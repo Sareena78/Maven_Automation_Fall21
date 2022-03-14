@@ -5,6 +5,8 @@ import USPS_Page_Object.BaseClass;
 import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+
 public class USPS_Ship_A_Label_POM extends Reusable_Annotations {
 
     @Test
@@ -22,6 +24,12 @@ public class USPS_Ship_A_Label_POM extends Reusable_Annotations {
 
         //click on Ship a Label
         BaseClass.sendMailAndPackages().clickOnPrintLabelButton();
+
+        //to switch to new tab use arraylist
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        //switch to new tab
+        driver.switchTo().window(tabs.get(1));
+        //Thread.sleep(1000);
 
 
 
