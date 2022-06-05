@@ -22,6 +22,7 @@ public class TestNG_Annotations {
         driver.navigate().to("https://www.google.com");
     }//end of precondition
 
+    //Test Case 1
     @Test(priority = 1)
     public void SearchForAKeyword(){
         //verify the title says 'Google'
@@ -32,17 +33,19 @@ public class TestNG_Annotations {
             System.out.println("Title doesn't match. Actual title is " + actualTitle);
         }
 
-        //search for a keyword
+        //enter a keyword on search field
         Reusable_Actions.sendKeysMethod(driver,"//*[@name='q']","Cars","Google Search");
-        //submit
+        //submit the go button
         Reusable_Actions.submitMethod(driver,"//*[@name='btnK']","Submit Button");
 
     }//end of test 1
     //@Test(dependsOnMethods="HuluSignupLoop") (adding the dependency).
-
+//Test Case 2
     @Test(priority = 2)
     public void CaptureSearchNumber(){
+        //Capture search result
         String result = Reusable_Actions.getTextMethod(driver,"//*[@id='result-stats']","Search Result");
+        //split the result by single space and print out the search result
         String[] arrayResult = result.split(" ");
         System.out.println("My search number for cars is " + arrayResult[1]);
     }//end of test 2

@@ -16,7 +16,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Reusable_Actions_Loggers_POM {
+public class  Reusable_Actions_Loggers_POM {
     //create a reusable method for WebDriver and chromeoptions
     public static WebDriver setDriver(){
         //setup chrome driver
@@ -200,6 +200,24 @@ public class Reusable_Actions_Loggers_POM {
                 System.out.println("Unable to " + scroll + "Error:" + e);
             }
         }
+    //method to capture screenshot when logger fails
+    public static void getScreenShot(WebDriver driver,String imageName,ExtentTest logger) {
+        try {
+            String fileName = imageName + ".png";
+            String directory = null;
+            String snPath = null;
+            directory = "src/main/java/HTML_Report/Screenshots/";
+            snPath = "Screenshots//";
+            File sourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(sourceFile, new File(directory + fileName));
+            //String imgPath = directory + fileName;
+            String image = logger.addScreenCapture(snPath + fileName);
+            logger.log(LogStatus.FAIL, "", image);
+        } catch (Exception e) {
+            logger.log(LogStatus.FAIL, "Error Occured while taking SCREENSHOT!!!");
+            e.printStackTrace();
 
+        }
+    }//end of getScreenshot method
 
 }//end of java class

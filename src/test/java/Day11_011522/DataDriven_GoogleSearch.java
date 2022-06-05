@@ -37,7 +37,7 @@ public class DataDriven_GoogleSearch {
         WritableSheet writableSheet = writableFile.getSheet(0);
 
         //will return the physical/Actual rows present on the sheet
-        int rowCount2 = writableSheet.getRows();
+        int rowCount2 = writableSheet.getRows(); 
         System.out.println("My writable row count is " + rowCount2);
 
         //generate the for/while loop

@@ -91,6 +91,17 @@ public class Reusable_Actions {
             System.out.println("Unable to submit on " + elementName + " Error:" + e);
         }
     }//end of submit method
+    //create a submit method
+    public static void submitAction(WebDriver driver,String xpath, String elementName){
+        WebDriverWait wait = new WebDriverWait(driver,10);
+        try{
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+            element.submit();
+        } catch (Exception e) {
+            System.out.println("Unable to submit on element " + elementName + " " + e);
+        }
+    }//end of submit
+
     //Creating the scrolling method
     public static void scrollMethod(WebDriver driver, String x, String y) {
 

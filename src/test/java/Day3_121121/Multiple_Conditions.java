@@ -15,5 +15,18 @@ public class Multiple_Conditions {
         } else {
             System.out.println("a and b is equal to c");
         }
+
+        //declare additional variables
+        int d = 3;
+        int e = 4;
+        int f = 8;
+        //or operator with if statement
+        // || or operator, one of the condition has to be true
+        // && and operator, both conditions have to be true
+        if (d+e > f || d+e < f){
+            System.out.println("the statement is true ");
+        }else {
+            System.out.println(" The statement is false");
+        }
     }//end off main
 }//end of class

@@ -71,6 +71,34 @@ public class Reusable_Actions_Loggers {
         }
     }//end of click method
 
+    //create a click method
+    public static void clickAction(WebDriver driver,String xpath, ExtentTest logger, String elementName){
+        WebDriverWait wait = new WebDriverWait(driver,10);
+        try{
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+            element.click();
+            logger.log(LogStatus.PASS,"Successfully clicked on " + elementName);
+        } catch (Exception e) {
+            System.out.println("Unable to click on element " + elementName + " " + e);
+            logger.log(LogStatus.FAIL,"Unable to click on element " + elementName + " " + e);
+        }
+    }//end of clickAction
+
+    public static void verifyStatusOfElement(WebDriver driver, String xpath, Boolean expectedStatus, ExtentTest logger, String ElementName){
+        WebDriverWait wait = new WebDriverWait(driver,10);
+        try{
+            Boolean actualStatus = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@type='checkbox']"))).isSelected();
+            if(expectedStatus == actualStatus){
+                logger.log(LogStatus.PASS,"Element is selected as expected");
+            } else {
+                logger.log(LogStatus.FAIL,"Element is not selected");
+            }
+        } catch (Exception e) {
+
+        }
+
+    }//end of method
+
     //creating void submit method for any web element
     public static void submitMethodWithLogger(WebDriver driver, String xpath, String elementName) {
         //declare local explicit wait

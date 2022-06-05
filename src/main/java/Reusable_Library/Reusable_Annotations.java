@@ -10,18 +10,21 @@ import org.testng.annotations.BeforeSuite;
 
 import java.lang.reflect.Method;
 import java.util.UUID;
-
+//Set all global variables here with public static so you can call into other classes
 public class Reusable_Annotations {
     public static WebDriver driver;
     public static ExtentReports reports;
     public static ExtentTest logger;
 
+//Set before Suite for report path and set driver
     @BeforeSuite
-    public void SetDriverAndReport(){
+    public void SetChromeDriverAndReport(){
         driver = Reusable_Actions_Loggers.setDriver();
+        //define the path to report
         reports = new ExtentReports("src/main/java/HTML_Report/Automation_Report"+ Reusable_Actions_Loggers.getDateTime()+".html",true);
     }//end of before suite
 
+//set before metho to capture name for each test so it can be added to html report later
     @BeforeMethod
     public void captureTestName(Method methodName){
         logger = reports.startTest(methodName.getName());
@@ -31,7 +34,7 @@ public class Reusable_Annotations {
     public void endTest(){
         reports.endTest(logger);
     }//end of after method
-
+//after suite to flush the reports and quit the driver.
     @AfterSuite
     public void endOfTestSuite(){
         //driver.quit();

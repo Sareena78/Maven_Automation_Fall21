@@ -1,5 +1,6 @@
 package Day5_121821;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,7 +10,8 @@ import java.sql.Driver;
 public class Google_Automation {
     public static void main(String[] args) throws InterruptedException {
         //Set the property of the chromedrier we are using
-        System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
+       // System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         //define the web driver you are using
         WebDriver driver = new ChromeDriver();
         //Navigate to google.
@@ -19,14 +21,16 @@ public class Google_Automation {
         //add wait time
         Thread.sleep(2000);
 
-        //Type cars
+        //locate element for search field and Type the worked  cars
         driver.findElement(By.xpath("//*[@name='q']")).sendKeys("cars");
         Thread.sleep(2000);
+
+        //hit enter
         driver.findElement(By.xpath("//*[@value='Google Search']")).submit();
         Thread.sleep(3000);
 
         //Capture the result and store it as a variable, e.g. variable name result
-        String result = driver.findElement(By.xpath("//*[@id='result-stats']")).getText();
+        var result = driver.findElement(By.xpath("//*[@id='result-stats']")).getText();
         //declaring the array variable to split the result
         String[] arrayResult = result.split(" ");
         //Now print the search number only

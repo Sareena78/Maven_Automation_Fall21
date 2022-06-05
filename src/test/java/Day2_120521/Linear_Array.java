@@ -20,6 +20,12 @@ public class Linear_Array {
         System.out.println("My first city is " + cities[1] + " and the street number is " + streetNumber[2] + " and the State is " + State[2]);
         System.out.println("My first zipcode is " + zipcodes[0] + " and street number is " + streetNumber[0]);
 
+        //Another way to do above example is
+        String[] zipCodes = new String[]{"11218","11219","20233","12541"};
+        System.out.println("my first zip code is" +zipCodes[0]+ "my last zip code is " +zipCodes[3]);
+
+        int[] houseNumber = new int[] {1405,1302,1409,5201};
+        System.out.println("My house nubmer is " +houseNumber[0]+ "Your house number is " +houseNumber[1]);
 
 
     }//end of main

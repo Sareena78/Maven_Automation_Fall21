@@ -29,32 +29,59 @@ public class Tab_Switch {
         driver.navigate().to("https://www.uhc.com");
         Thread.sleep(2500);
         //click on find a doctor
-        driver.findElement(By.xpath("//*[text()='Find a doctor']")).click();
+        try  {
+            driver.findElement(By.xpath("//*[text()='Find a doctor']")).click();
+        }catch (Exception e){
+            System.out.println("unable to click " +e);
+        }
         Thread.sleep(2500);
         //pop up
-        driver.findElement(By.xpath("//*[@id='ip-close']")).click();
+        try {
+            driver.findElement(By.xpath("//*[@id='ip-close']")).click();
+        } catch (Exception e) {
+            System.out.println("pop up did not show" + e);;
+        }//end of try catch block
+
         //Scroll to the window of loan view
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         //Scroll down
         jse.executeScript("scroll(0,450)");
         //click on select your plan dropdown and choose medicare as value
-        driver.findElement(By.xpath("//*[contains(text(),'Sign in to find providers in your network')]")).click();
+        try{
+            driver.findElement(By.xpath("//*[contains(text(),'Sign in to find providers in your network')]")).click();
+        }catch  (Exception e){
+            System.out.println("unable to click on " + e);
+        }
 
         //WebDriverWait wait = new WebDriverWait(driver, 15);
-       // wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Medicare plan']"))).click();
+       //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Medicare plan']"))).click();
 
-        driver.findElement(By.xpath("//*[text()='Medicare plan']")).click();
+        try {
+            driver.findElement(By.xpath("//*[text()='Medicare plan']")).click();
+        }catch (Exception e){
+            System.out.println("Unable to click on medicare plan" +e);
+        }
+        //click on dismiss
+       try {
+           driver.findElement(By.xpath("//*[@id='alert-sticky__dismiss-button']")).click();
+       }catch (Exception e){
+           System.out.println("dismiss didnt show" +e);
+       }
+        Thread.sleep(1000);
+
+        //click on Sign In
+        try {
+            driver.findElement(By.xpath("//*[text()='Sign In']")).click();
+        }catch (Exception e){
+            System.out.println("unable to click on sign in " +e);
+        }
 
         //to switch to new tab use arraylist
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         //switch to new tab
         driver.switchTo().window(tabs.get(1));
-       //Thread.sleep(1000);
-        //click on dismiss
-        driver.findElement(By.xpath("//*[@id='alert-sticky__dismiss-button']")).click();
         //Thread.sleep(1000);
-        //click on Sign In
-        driver.findElement(By.xpath("//*[text()='Sign In']")).click();
+        //driver.close();
 
     }//end of main
 }//end of class

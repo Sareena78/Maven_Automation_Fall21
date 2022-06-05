@@ -36,7 +36,7 @@ public class MouseActions {
         } else {
             System.out.println("Title doesn't match. Actual title is " + actualTitle);
         }
-
+Thread.sleep(15);
         //declare mouse actions
         Actions mouseAction = new Actions(driver);
         //hover over send tab to open the drop down list
@@ -48,6 +48,7 @@ public class MouseActions {
         } catch (Exception e) {
             System.out.println("Unable to hover over " + e);
         }//end of try/catch
+        Thread.sleep(15);
         //Click on look a zipcode from dropdown
         try {
             WebElement zipCodeLookup = driver.findElement(By.xpath("//*[text()='Look Up a ZIP Code']"));
