@@ -6,6 +6,8 @@ public class ArrayListTopic {
     public static void main(String[] args) {
         //define and declare Array listy
         ArrayList<String> countries = new ArrayList<>();
+
+
         countries.add("Canada");
         countries.add("Canada");
         countries.add("Canada");

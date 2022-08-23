@@ -42,6 +42,8 @@ public class E2_HomePage extends Reusable_Annotations {
     public void secondPupUp() {
         Reusable_Actions_Loggers_POM.PopUpClickMethod(driver, close2ndPopup, logger, "Close pup up");
     }
+    //close pupup
+    //driver.switchto.alert.accept.dismiss;
 
     //Hover over women tabs using actions
     public void womensTab() {

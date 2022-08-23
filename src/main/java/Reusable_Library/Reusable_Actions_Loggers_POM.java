@@ -154,6 +154,7 @@ public class  Reusable_Actions_Loggers_POM {
         } catch (Exception e) {
             System.out.println("Pop up did not show up " + elementName + " " + e);
             logger.log(LogStatus.PASS, " Pop up did not show up moving to the next step " + elementName);
+            getScreenShot(driver,elementName,logger);
         }//end of try catch
     }//end of popup click method
 
@@ -187,6 +188,7 @@ public class  Reusable_Actions_Loggers_POM {
             logger.log(LogStatus.FAIL, "", image);
         } catch (Exception e) {
             logger.log(LogStatus.FAIL, "Error Occured while taking SCREENSHOT!!!");
+
             e.printStackTrace();
         }
 

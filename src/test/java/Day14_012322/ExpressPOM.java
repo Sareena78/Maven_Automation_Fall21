@@ -12,6 +12,7 @@ import jxl.write.Label;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
@@ -63,6 +64,8 @@ public class ExpressPOM extends Reusable_Annotations {
                 System.out.println("Title does not match");
                 logger.log(LogStatus.FAIL, "Title does not match");
             }//end of if else statement
+            Thread.sleep(15);
+            driver.findElement(By.xpath("//*[@id='onetrust-close-btn-container']"));
 
             E1_BaseClass.homepage().womensTab();
             E1_BaseClass.homepage().dressTab();

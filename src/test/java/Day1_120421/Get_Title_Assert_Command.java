@@ -18,8 +18,9 @@ public class Get_Title_Assert_Command {
         String actualTitle = driver.getTitle();
         System.out.println("Actual title is " + actualTitle);
 
-        //String expectedTitle = "Tax Preparation Services Company | H&R Block®";
-        //Assert.assertEquals("Condition true", actualTitle, expectedTitle);
+        String expectedTitle = "Tax Preparation Services Company | H&R Block®";
+        Assert.assertEquals("Condition true", actualTitle, expectedTitle);
+        System.out.println(" Actual title matches expected Title");
 
 
         driver.close();

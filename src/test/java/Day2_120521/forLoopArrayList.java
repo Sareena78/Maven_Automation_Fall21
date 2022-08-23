@@ -15,7 +15,7 @@ public class forLoopArrayList {
         boroughs.add("LI");
 
         for (int i=0; i<boroughs.size();i++) {
-            ;
+
             System.out.println("i is now " + i);
             System.out.println("My borough is " + boroughs.get(0) + " and is " + boroughs.get(3));
 
